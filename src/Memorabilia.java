@@ -15,6 +15,7 @@ public class Memorabilia {
     int[] idClient = new int[20];
     String[] nombreCilient = new String[20];
     String[] dispo = new String[20];
+    String[] tiene = new String[20];
     int[] idPeliPrestado = new int[20];
 
     public static void main(String[] args) {
@@ -103,7 +104,7 @@ public class Memorabilia {
                 System.out.print((i + 1) + " \033[32mIngrese la categoría de la pelicula: ");
                 categoria[i] = net.nextLine();
                 ent.nextLine();
-                System.out.println((i + 1) + " \033[32mIngrese el año de estreno");
+                System.out.print((i + 1) + " \033[32mIngrese el año de estreno");
                 año[i] = net.nextInt();
                 ent.nextLine();
 
@@ -131,30 +132,143 @@ public class Memorabilia {
 
     public void mostrarPelicula() {
         System.out.println("PELICULAS DISPONIBLES...");
-        
         peliculasCreadas();
         for (int i = 0; i < 20; i++) {
-            if((namePeli[i] != null) && (idPeli[i] != 0) && (categoria[i] != null) && (año[i] != 0)){
-            System.out.println("\033[32mPELICULA " + (i + 1));
-            System.out.println("\033[32mNombre: " + namePeli[i]);
-            System.out.println("\033[32mID: " + idPeli[i]);
-            System.out.println("\033[32mCategoría: " + categoria[i]);
-            System.out.println(dispo[i]);
-           
-            System.out.println("");
+            if ((namePeli[i] != null) && (idPeli[i] != 0) && (categoria[i] != null) && (año[i] != 0)) {
+                System.out.println("\033[32mPELICULA " + (i + 1));
+                System.out.println("\033[32mNombre: " + namePeli[i]);
+                System.out.println("\033[32mID: " + idPeli[i]);
+                System.out.println("\033[32mCategoría: " + categoria[i]);
+                System.out.println(dispo[i]);
+                System.out.println("");
 
             }
-            
+
+        }
+
+    }
+
+    public void clientesInsertados() {
+        nombreCilient[0] = "Carlos Lopez";
+        idClient[0] = 111;
+        telefono[0] = 22334455;
+        prestado[0] = true;
+        if (prestado[0]) {
+            tiene[0] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[0] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[1] = "Fernando Torres";
+        idClient[1] = 112;
+        telefono[1] = 43435446;
+        prestado[1] = true;
+        if (prestado[1]) {
+            tiene[1] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[1] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[2] = "Byron Ajxup";
+        idClient[2] = 113;
+        telefono[2] = 56782345;
+        prestado[2] = true;
+        if (prestado[2]) {
+            tiene[2] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[2] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[3] = "Ernesto Gonzales";
+        idClient[3] = 114;
+        telefono[3] = 21436798;
+        prestado[3] = true;
+        if (prestado[3]) {
+            tiene[3]= "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[3] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[4] = "Clara Hernandez";
+        idClient[4] = 115;
+        telefono[4] = 78996845;
+        prestado[4] = true;
+        if (prestado[4]) {
+            tiene[4] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[4] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[5] = "Bernardo Zárate";
+        idClient[5] = 116;
+        telefono[5] = 34323589;
+        prestado[5] = true;
+        if (prestado[5]) {
+            tiene[5] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[5]= "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[6] = "Karla Morrison";
+        idClient[6] = 117;
+        telefono[6] = 65458945;
+        prestado[6] = true;
+        if (prestado[6]) {
+            tiene[6] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[6] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[7] = "Brenda Perez";
+        idClient[7] = 118;
+        telefono[7] = 23676986;
+        prestado[7] = true;
+        if (prestado[7]) {
+            tiene[7] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[7] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[8] = "Betzaida Perez";
+        idClient[8] = 119;
+        telefono[8] = 67424956;
+        prestado[8] = true;
+        if (prestado[8]) {
+            tiene[8] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[8] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[9] = "Catalyn Hernandez";
+        idClient[9] = 120;
+        telefono[9] = 4568538;
+        prestado[9] = true;
+        if (prestado[9]) {
+            tiene[9] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[9] = "\033[31mTiene prestado un libro";
+        }
+
+        nombreCilient[10] = "Eddy Torres";
+        idClient[10] = 121;
+        telefono[10] = 98654764;
+        prestado[10] = true;
+        if (prestado[10]) {
+            tiene[10] = "\033[33mNo teiene prestado ningun libro";
+        } else {
+            tiene[10] = "\033[31mTiene prestado un libro";
         }
 
     }
 
     public void insertarClientes() {
         System.out.println("INGRESAR CLIENTES...");
-        for (int i = 3; i < 4; i++) {
+        int aux = 11;
+        int desicion;
+        for (int i = aux; i < aux + 1; i++) {
             Scanner net = new Scanner(System.in);
             if ((nombreCilient[i] == null) && (idClient[i] == 0) && (telefono[i] == 0)) {
-                System.out.println((i + 1) + " \033[32mIngrese el nombre del cielte:");
+                System.out.print((i + 1) + " \033[32mIngrese el nombre del cielte:");
                 nombreCilient[i] = net.nextLine();
 
                 System.out.print((i + 1) + " \033[32mIngrese su ID: ");
@@ -170,7 +284,23 @@ public class Memorabilia {
                 }
                 System.out.print((i + 1) + " \033[32mIngres el telefono: ");
                 telefono[i] = net.nextInt();
+                prestado[i]=true;
+                if (prestado[10]) {
+                    tiene[10] = "\033[33mNo teiene prestado ningun libro";
+                } else {
+                    tiene[10] = "\033[31mTiene prestado un libro";
+                }
+
                 System.out.println("");
+            } else {
+                System.out.println("No podemos ingresar mas clientes");
+            }
+            System.out.println("¿Quieres ingresar mas peliculas? \n1=Si\n2=No");
+            desicion = net.nextInt();
+            if (desicion == 1) {
+                aux++;
+            } else {
+                aux = 3;
             }
 
         }
@@ -178,30 +308,37 @@ public class Memorabilia {
 
     public void mostrarClientes() {
         System.out.println("CLIENTES...");
+        clientesInsertados();
         for (int i = 0; i < 20; i++) {
-
-            System.out.println("\033[32mCLIENTE " + (i + 1));
-            System.out.print("Nombre: " + nombreCilient[i]);
-            System.out.println("\033[32mID: " + idClient[i]);
-            System.out.println("\033[32mNo. Tel: " + telefono[i]);
-
-            if (prestado[i]) {
-                System.out.println("\033[33mNo teiene prestado ningun libro");
-            } else {
-                System.out.println("\033[31mTiene prestado un libro");
+            if ((namePeli[i] != null) && (idPeli[i] != 0) && (categoria[i] != null) && (año[i] != 0)) {
+                System.out.println("\033[32mCLIENTE " + (i + 1));
+                System.out.println("Nombre: " + nombreCilient[i]);
+                System.out.println("\033[32mID: " + idClient[i]);
+                System.out.println("\033[32mNo. Tel: " + telefono[i]);
+                System.out.println(dispo[i]);
+                System.out.println("");
             }
-            System.out.println("");
 
         }
 
     }
 
     public void prestamoPeliculas() {
-        int id, tiempo;
+        int ide, tiempo,eleccion,desi;
         String nombre, cat;
-        peliculasCreadas();
-        mostrarPelicula();
-        System.out.println("");
+        System.out.println("Solo puedes prestar una pelicula, ¿quieres continuar o salir?\nSi=1\nNo=2");
+        desi=ent.nextInt();
+        if (desi==1) {
+            mostrarPelicula();
+            System.out.println("Ingrese el ID de la pelicula que desea rentar:");
+            eleccion=ent.nextInt();
+            //Aqui va irá una funcion que devuelva la informacion del id de la pelicula que prestará 
+            System.out.println("Ingrese el ID del Cliente:");
+            ide=ent.nextInt();
+            //Aqui va otro metodo donde devuelva la informacion del cliente con solo digitar su ID           
+        } 
+        
+
 
     }
 
@@ -327,5 +464,9 @@ public class Memorabilia {
             dispo[10] = "\033[31No disponible";
         }
     }
+
+   
+
+
 
 }
