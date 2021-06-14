@@ -88,9 +88,11 @@ public class Memorabilia {
 
     public void insertarPelicula() {
         System.out.println("INGRESAR PELICULAS...");
-        for (int i = 3; i <4; i++) {
+        int aux=11;
+        int desicion;
+        for (int i =aux; i <aux+1; i++) {
+            Scanner net = new Scanner(System.in);
             if ((namePeli[i] == null) && (idPeli[i] == 0) && (categoria[i] == null) && (año[i] == 0)) {
-                Scanner net = new Scanner(System.in);
                 System.out.print((i + 1) + " \033[32mIngrese al nombre de la pelicula:");
                 namePeli[i] = net.nextLine();
                 ent.nextLine();
@@ -100,9 +102,10 @@ public class Memorabilia {
                 System.out.print((i + 1) + " \033[32mIngrese la categoría de la pelicula: ");
                 categoria[i] = net.nextLine();
                 ent.nextLine();
-                System.out.println((i + 1) + " \033[32mIngrese el año de la ");
+                System.out.println((i + 1) + " \033[32mIngrese el año de estreno");
                 año[i] = net.nextInt();
                 ent.nextLine();
+                
                 disponible[i]=true;
                 if (disponible[i]) {
                     dispo[i]="\033[33mDisponible";
@@ -113,6 +116,14 @@ public class Memorabilia {
             } else {
                 System.out.println("No puede ingresar mas peliculas: ");
             }
+            System.out.println("¿Quieres ingresar mas peliculas? \n1=Si\n2=No");
+            desicion=net.nextInt();
+            if(desicion==1){
+                aux++;
+            }else{
+                aux=3;
+            }
+          
         }
 
     }
@@ -136,7 +147,7 @@ public class Memorabilia {
         System.out.println("INGRESAR CLIENTES...");
         for (int i = 3; i < 4; i++) {
             Scanner net = new Scanner(System.in);
-            if ((nombreCilient[i] == null)) {
+            if ((nombreCilient[i] == null)&&(idClient[i]==0)&&(telefono[i]==0)) {
                 System.out.println((i + 1) + " \033[32mIngrese el nombre del cielte:");
                 nombreCilient[i] = net.nextLine();
 
@@ -193,6 +204,8 @@ public class Memorabilia {
         } else {
             dispo[0]="\033[31No disponible";
         }
+
+
         namePeli[1] = "El señor de los anillos \n\t\tLas dos torres";
         idPeli[1] = 11;
         año[1] = 2001;
@@ -203,6 +216,8 @@ public class Memorabilia {
         } else {
             dispo[1]="\033[31No disponible";
         }
+
+
         namePeli[2] = "El señor de los anillos \n\t\tEl retorno del rey";
         idPeli[2] = 12;
         año[2] = 2003;
@@ -213,8 +228,105 @@ public class Memorabilia {
         } else {
             dispo[2]="\033[31No disponible";
         }
+        
+
+        namePeli[3] = "Karate kid";
+        idPeli[3] = 13;
+        año[3] = 1987;
+        categoria[3] = "Guerra";
+        disponible[3] = true;
+        if (disponible[3]) {
+            dispo[3]="\033[33mDisponible";
+        } else {
+            dispo[3]="\033[31No disponible";
+        }
+
+        namePeli[4] = "Interestelar";
+        idPeli[4] = 14;
+        año[4] = 2014;
+        categoria[4] = "Ficcion";
+        disponible[4] = true;
+        if (disponible[4]) {
+            dispo[4]="\033[33mDisponible";
+        } else {
+            dispo[4]="\033[31No disponible";
+        }
+
+
+        namePeli[5] = "Lucy";
+        idPeli[5] = 15;
+        año[5] = 2014;
+        categoria[5] = "Ficcion";
+        disponible[5] = true;
+        if (disponible[5]) {
+            dispo[5]="\033[33mDisponible";
+        } else {
+            dispo[5]="\033[31No disponible";
+        }
+
+
+        namePeli[6] = "Inception";
+        idPeli[6] = 16;
+        año[6] = 2010;
+        categoria[6] = "Ficcion";
+        disponible[6] = true;
+        if (disponible[6]) {
+            dispo[6]="\033[33mDisponible";
+        } else {
+            dispo[6]="\033[31No disponible";
+        }
+
+        namePeli[7] = "Vida inteligente";
+        idPeli[7] = 17;
+        año[7] = 2017;
+        categoria[7] = "Ficcion";
+        disponible[7] = true;
+        if (disponible[7]) {
+            dispo[7]="\033[33mDisponible";
+        } else {
+            dispo[7]="\033[31No disponible";
+        }
+
+
+        namePeli[8] = "BAck to the future 1";
+        idPeli[8] = 18;
+        año[8] = 1985;
+        categoria[8] = "Ficcion";
+        disponible[8] = true;
+        if (disponible[8]) {
+            dispo[8]="\033[33mDisponible";
+        } else {
+            dispo[8]="\033[31No disponible";
+        }
+
+
+        namePeli[9] = "Back to the future 2";
+        idPeli[9] = 19;
+        año[9] = 1985;
+        categoria[9] = "Ficcion";
+        disponible[9] = true;
+        if (disponible[9]) {
+            dispo[9]="\033[33mDisponible";
+        } else {
+            dispo[9]="\033[31No disponible";
+        }
+
+
+        namePeli[10] = "Back to the future 3";
+        idPeli[10] = 20;
+        año[10] = 1985;
+        categoria[10] = "Ficcion";
+        disponible[10] = true;
+        if (disponible[10]) {
+            dispo[10]="\033[33mDisponible";
+        } else {
+            dispo[10]="\033[31No disponible";
+        }
         mostrarPelicula();
 
     }
+
+
+
 
 }
