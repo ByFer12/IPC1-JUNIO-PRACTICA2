@@ -14,7 +14,8 @@ public class Memorabilia {
     int aux1 = 0, aux2;
     int[] idClient = new int[20];
     String[] nombreCilient = new String[20];
-    String [] dispo=new String[20];
+    String[] dispo = new String[20];
+    int[] idPeliPrestado = new int[20];
 
     public static void main(String[] args) {
         Memorabilia tienda = new Memorabilia();
@@ -88,9 +89,9 @@ public class Memorabilia {
 
     public void insertarPelicula() {
         System.out.println("INGRESAR PELICULAS...");
-        int aux=11;
+        int aux = 11;
         int desicion;
-        for (int i =aux; i <aux+1; i++) {
+        for (int i = aux; i < aux + 1; i++) {
             Scanner net = new Scanner(System.in);
             if ((namePeli[i] == null) && (idPeli[i] == 0) && (categoria[i] == null) && (año[i] == 0)) {
                 System.out.print((i + 1) + " \033[32mIngrese al nombre de la pelicula:");
@@ -105,32 +106,35 @@ public class Memorabilia {
                 System.out.println((i + 1) + " \033[32mIngrese el año de estreno");
                 año[i] = net.nextInt();
                 ent.nextLine();
-                
-                disponible[i]=true;
+
+                disponible[i] = true;
                 if (disponible[i]) {
-                    dispo[i]="\033[33mDisponible";
+                    dispo[i] = "\033[33mDisponible";
                 } else {
-                    dispo[i]="\033[31mNo disponible";
+                    dispo[i] = "\033[31mNo disponible";
                 }
                 System.out.println("");
             } else {
                 System.out.println("No puede ingresar mas peliculas: ");
             }
             System.out.println("¿Quieres ingresar mas peliculas? \n1=Si\n2=No");
-            desicion=net.nextInt();
-            if(desicion==1){
+            desicion = net.nextInt();
+            if (desicion == 1) {
                 aux++;
-            }else{
-                aux=3;
+            } else {
+                aux = 3;
             }
-          
+
         }
 
     }
 
     public void mostrarPelicula() {
         System.out.println("PELICULAS DISPONIBLES...");
+        
+        peliculasCreadas();
         for (int i = 0; i < 20; i++) {
+            if((namePeli[i] != null) && (idPeli[i] != 0) && (categoria[i] != null) && (año[i] != 0)){
             System.out.println("\033[32mPELICULA " + (i + 1));
             System.out.println("\033[32mNombre: " + namePeli[i]);
             System.out.println("\033[32mID: " + idPeli[i]);
@@ -139,6 +143,8 @@ public class Memorabilia {
            
             System.out.println("");
 
+            }
+            
         }
 
     }
@@ -147,7 +153,7 @@ public class Memorabilia {
         System.out.println("INGRESAR CLIENTES...");
         for (int i = 3; i < 4; i++) {
             Scanner net = new Scanner(System.in);
-            if ((nombreCilient[i] == null)&&(idClient[i]==0)&&(telefono[i]==0)) {
+            if ((nombreCilient[i] == null) && (idClient[i] == 0) && (telefono[i] == 0)) {
                 System.out.println((i + 1) + " \033[32mIngrese el nombre del cielte:");
                 nombreCilient[i] = net.nextLine();
 
@@ -172,7 +178,7 @@ public class Memorabilia {
 
     public void mostrarClientes() {
         System.out.println("CLIENTES...");
-        for (int i = 0;i < 20; i++) {
+        for (int i = 0; i < 20; i++) {
 
             System.out.println("\033[32mCLIENTE " + (i + 1));
             System.out.print("Nombre: " + nombreCilient[i]);
@@ -193,18 +199,23 @@ public class Memorabilia {
     public void prestamoPeliculas() {
         int id, tiempo;
         String nombre, cat;
-        
+        peliculasCreadas();
+        mostrarPelicula();
+        System.out.println("");
+
+    }
+
+    public void peliculasCreadas() {
         namePeli[0] = "El señor de los anillos \n\t\tLa comarca del anillo ";
         idPeli[0] = 10;
         año[0] = 2000;
         categoria[0] = "Guerra";
         disponible[0] = true;
         if (disponible[0]) {
-            dispo[0]="\033[33mDisponible";
+            dispo[0] = "\033[33mDisponible";
         } else {
-            dispo[0]="\033[31No disponible";
+            dispo[0] = "\033[31No disponible";
         }
-
 
         namePeli[1] = "El señor de los anillos \n\t\tLas dos torres";
         idPeli[1] = 11;
@@ -212,11 +223,10 @@ public class Memorabilia {
         categoria[1] = "Guerra";
         disponible[1] = true;
         if (disponible[1]) {
-            dispo[1]="\033[33mDisponible";
+            dispo[1] = "\033[33mDisponible";
         } else {
-            dispo[1]="\033[31No disponible";
+            dispo[1] = "\033[31No disponible";
         }
-
 
         namePeli[2] = "El señor de los anillos \n\t\tEl retorno del rey";
         idPeli[2] = 12;
@@ -224,11 +234,10 @@ public class Memorabilia {
         categoria[2] = "Guerra";
         disponible[2] = true;
         if (disponible[2]) {
-            dispo[2]="\033[33mDisponible";
+            dispo[2] = "\033[33mDisponible";
         } else {
-            dispo[2]="\033[31No disponible";
+            dispo[2] = "\033[31No disponible";
         }
-        
 
         namePeli[3] = "Karate kid";
         idPeli[3] = 13;
@@ -236,9 +245,9 @@ public class Memorabilia {
         categoria[3] = "Guerra";
         disponible[3] = true;
         if (disponible[3]) {
-            dispo[3]="\033[33mDisponible";
+            dispo[3] = "\033[33mDisponible";
         } else {
-            dispo[3]="\033[31No disponible";
+            dispo[3] = "\033[31No disponible";
         }
 
         namePeli[4] = "Interestelar";
@@ -247,11 +256,10 @@ public class Memorabilia {
         categoria[4] = "Ficcion";
         disponible[4] = true;
         if (disponible[4]) {
-            dispo[4]="\033[33mDisponible";
+            dispo[4] = "\033[33mDisponible";
         } else {
-            dispo[4]="\033[31No disponible";
+            dispo[4] = "\033[31No disponible";
         }
-
 
         namePeli[5] = "Lucy";
         idPeli[5] = 15;
@@ -259,11 +267,10 @@ public class Memorabilia {
         categoria[5] = "Ficcion";
         disponible[5] = true;
         if (disponible[5]) {
-            dispo[5]="\033[33mDisponible";
+            dispo[5] = "\033[33mDisponible";
         } else {
-            dispo[5]="\033[31No disponible";
+            dispo[5] = "\033[31No disponible";
         }
-
 
         namePeli[6] = "Inception";
         idPeli[6] = 16;
@@ -271,9 +278,9 @@ public class Memorabilia {
         categoria[6] = "Ficcion";
         disponible[6] = true;
         if (disponible[6]) {
-            dispo[6]="\033[33mDisponible";
+            dispo[6] = "\033[33mDisponible";
         } else {
-            dispo[6]="\033[31No disponible";
+            dispo[6] = "\033[31No disponible";
         }
 
         namePeli[7] = "Vida inteligente";
@@ -282,11 +289,10 @@ public class Memorabilia {
         categoria[7] = "Ficcion";
         disponible[7] = true;
         if (disponible[7]) {
-            dispo[7]="\033[33mDisponible";
+            dispo[7] = "\033[33mDisponible";
         } else {
-            dispo[7]="\033[31No disponible";
+            dispo[7] = "\033[31No disponible";
         }
-
 
         namePeli[8] = "BAck to the future 1";
         idPeli[8] = 18;
@@ -294,11 +300,10 @@ public class Memorabilia {
         categoria[8] = "Ficcion";
         disponible[8] = true;
         if (disponible[8]) {
-            dispo[8]="\033[33mDisponible";
+            dispo[8] = "\033[33mDisponible";
         } else {
-            dispo[8]="\033[31No disponible";
+            dispo[8] = "\033[31No disponible";
         }
-
 
         namePeli[9] = "Back to the future 2";
         idPeli[9] = 19;
@@ -306,11 +311,10 @@ public class Memorabilia {
         categoria[9] = "Ficcion";
         disponible[9] = true;
         if (disponible[9]) {
-            dispo[9]="\033[33mDisponible";
+            dispo[9] = "\033[33mDisponible";
         } else {
-            dispo[9]="\033[31No disponible";
+            dispo[9] = "\033[31No disponible";
         }
-
 
         namePeli[10] = "Back to the future 3";
         idPeli[10] = 20;
@@ -318,15 +322,10 @@ public class Memorabilia {
         categoria[10] = "Ficcion";
         disponible[10] = true;
         if (disponible[10]) {
-            dispo[10]="\033[33mDisponible";
+            dispo[10] = "\033[33mDisponible";
         } else {
-            dispo[10]="\033[31No disponible";
+            dispo[10] = "\033[31No disponible";
         }
-        mostrarPelicula();
-
     }
-
-
-
 
 }
